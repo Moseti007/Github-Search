@@ -1,22 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-
-import { UserComponent } from './user/user.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { OrganisationComponent } from './organisation/organisation.component';
-
+import { NotFoundComponent } from './Error/not-found/not-found.component'
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  { path: '', pathMatch:'full', redirectTo: '/' },
-  { path: '', component: DashboardComponent    },
-  { path: 'user', component: UserComponent },
-  { path: 'organization',  component: OrganisationComponent }
+  {path: "", pathMatch:"full", redirectTo:"/home"},
+  {path: "home", component:UsersComponent},
+  {path: "404", component:NotFoundComponent},
+  {path: "**", redirectTo:"/404"},
 ];
 
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

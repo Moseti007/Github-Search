@@ -1,32 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
-import { GithubServiceService } from './github-service.service';
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { OrganisationComponent } from './organisation/organisation.component';
-import { RepositoryComponent } from './repository/repository.component';
-import { TruncatePipe } from './truncate.pipe';
 
+import { AppComponent } from './app.component';
+import { UsersComponent } from './users/users.component';
+import { HeaderComponent } from './header/header.component';
+import { GithubService } from './services/github.service';
+import { DateCountPipe } from './pipe/date-count.pipe';
+import { HoverDirective } from './directive/hover.directive';
+import { NotFoundComponent } from './Error/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    DashboardComponent,
-    OrganisationComponent,
-    RepositoryComponent,
-    TruncatePipe,
+    UsersComponent,
+    HeaderComponent,
+    DateCountPipe,
+    HoverDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule
+    FormsModule
   ],
-  providers: [GithubServiceService],
+  providers: [GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

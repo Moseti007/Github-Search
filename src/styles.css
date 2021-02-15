@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+html, body {
+  font-size: large;
+}
+
+body {
+  background-image: url("./assets/images/sai-kiran-anagani-5Ntkpxqt54Y-unsplash.jpg");
+  background-size: cover;
+  height: 760px;
+}
